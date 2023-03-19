@@ -1,8 +1,5 @@
-import React, { useContext } from "react";
-import Notecontext from "../Context/notes/Notecontext";
+import Notes from "./Notes";
 const Home = () => {
-	const Context = useContext(Notecontext);
-	const { notes, setNote } = Context;
 	return (
 		<div className="container my-3">
 			<h1>Add Note</h1>
@@ -32,7 +29,11 @@ const Home = () => {
 					/>
 				</div>
 				<div className="mb-3 form-check">
-					<input type="checkbox" className="form-check-input" id="exampleCheck1" />
+					<input
+						type="checkbox"
+						className="form-check-input"
+						id="exampleCheck1"
+					/>
 					<label className="form-check-label" htmlFor="exampleCheck1">
 						Check me out
 					</label>
@@ -41,10 +42,8 @@ const Home = () => {
 					Submit
 				</button>
 			</form>
-			<h1>Your Notes</h1>
-			{notes.map((e) => {
-				return <h1>{e.title}</h1>;
-			})}
+
+			<Notes></Notes>
 		</div>
 	);
 };
